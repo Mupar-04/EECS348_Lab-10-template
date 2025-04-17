@@ -98,29 +98,30 @@ void normalizeStrings(const std::string &inA, const std::string &inB, std::strin
 
 
 std::string addUnsignedStrings(std::string a, std::string b) {
-    
     std::string na, nb;
     normalizeStrings(a, b, na, nb);
-
 
     std::string result = "";
     int carry = 0;
 
-    for (int i = a.length() - 1; i >= 0; --i) {
-        if (a[i] == '.') {
-            result = '.' + result;
-            continue;
-        }
-
-        int digitSum = (a[i] - '0') + (b[i] - '0') + carry;
-        carry = digitSum / 10;
-        result = char((digitSum % 10) + '0') + result;
+    for (int i = na.length() - 1; i >= 0; --i) {
+      if (na[i] == '.') {
+        result = '.' + result;
+        continue;
     }
+
+    int digitSum = (na[i] - '0') + (nb[i] - '0') + carry;
+    carry = digitSum / 10;
+    result = char((digitSum % 10) + '0') + result;
+}
+
 
     if (carry) result = '1' + result;
 
     return result;
 }
+
+
 
 bool isSmaller(const std::string &a, const std::string &b) {
     std::string na, nb;
@@ -132,18 +133,17 @@ std::string subtractUnsignedStrings(std::string a, std::string b) {
     std::string na, nb;
     normalizeStrings(a, b, na, nb);
 
-
     std::string result = "";
     int borrow = 0;
 
-    for (int i = a.length() - 1; i >= 0; --i) {
-        if (a[i] == '.') {
+    for (int i = na.length() - 1; i >= 0; --i) {
+        if (na[i] == '.') {
             result = '.' + result;
             continue;
         }
 
-        int digitA = a[i] - '0' - borrow;
-        int digitB = b[i] - '0';
+        int digitA = na[i] - '0' - borrow;
+        int digitB = nb[i] - '0';
 
         if (digitA < digitB) {
             digitA += 10;
@@ -167,6 +167,8 @@ std::string subtractUnsignedStrings(std::string a, std::string b) {
 
     return result;
 }
+
+
 
 std::string addDoubles(const std::string &aStr, const std::string &bStr) {
     std::string a = aStr, b = bStr;
@@ -218,11 +220,11 @@ std::vector<std::string> readNumbersFromFile(const std::string &filename) {
 }
 
 
-double parse_number(const std::string &expression) {
-    // ONLY for internal testing or debugging
-    try {
-        return std::stod(expression);
-    } catch (...) {
-        return 0.0;
-    }
-}
+// double parse_number(const std::string &expression) {
+//     // ONLY for internal testing or debugging
+//     try {
+//         return std::stod(expression);
+//     } catch (...) {
+//         return 0.0;
+//     }
+// }

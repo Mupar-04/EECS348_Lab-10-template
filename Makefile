@@ -9,13 +9,13 @@ all: $(EXEC)
 
 # Compile target
 $(EXEC): main.o calculator.o
-	g++ -o $(EXEC) main.o calculator.o
+	g++ -std=c++11 -o $(EXEC) main.o calculator.o
 
 main.o: main.cpp calculator.hpp
-	g++ -c main.cpp
+	g++ -std=c++11 -c main.cpp
 
 calculator.o: calculator.cpp calculator.hpp
-	g++ -c calculator.cpp
+	g++ -std=c++11 -c calculator.cpp
 
 # Clean build files
 clean:
