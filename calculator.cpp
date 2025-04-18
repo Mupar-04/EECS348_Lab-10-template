@@ -4,6 +4,7 @@
 #include <cctype>
 #include <algorithm>
 #include <sstream>
+#include <vector>
 
 bool isValidDouble(const std::string &s) {
     int len = s.length();

@@ -2,6 +2,7 @@
 #define __CALCULATOR_HPP
 
 #include <string>
+#include <vector>
 
 // this function should expect that `expression` has already been
 // validated and thus throw no exceptions
