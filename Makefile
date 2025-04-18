@@ -1,3 +1,4 @@
+#Author: ChatGPT
 # Name of executable
 EXEC = calc
 
