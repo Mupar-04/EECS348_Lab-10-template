@@ -220,11 +220,4 @@ std::vector<std::string> readNumbersFromFile(const std::string &filename) {
 }
 
 
-// double parse_number(const std::string &expression) {
-//     // ONLY for internal testing or debugging
-//     try {
-//         return std::stod(expression);
-//     } catch (...) {
-//         return 0.0;
-//     }
-// }
+

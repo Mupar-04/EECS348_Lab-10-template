@@ -3,12 +3,13 @@
 #include "calculator.hpp"
 
 int main(int argc, char *argv[]) {
-  if (argc < 2) {
-    std::cout << "Usage: " << argv[0] << " <filename>\n";
-    return 1;
-  }
+    std::string filename;
+    std::cout << "Enter input file name: ";
+    std::getline(std::cin, filename);
 
-  std::vector<std::string> numbers = readNumbersFromFile(argv[1]);
+    std::vector<std::string> numbers = readNumbersFromFile(filename);
+
+ 
   std::string constant = "-123.456";
 
   for (const std::string &num : numbers) {

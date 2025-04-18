@@ -2,10 +2,11 @@
 EXEC = calc
 INPUT = test.txt
 
+
 # Default target
 all: $(EXEC)
-	@echo "Running with input file: $(INPUT)"
-	@./$(EXEC) $(INPUT)
+	@./$(EXEC)
+
 
 # Compile target
 $(EXEC): main.o calculator.o
