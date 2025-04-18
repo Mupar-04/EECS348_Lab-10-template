@@ -220,5 +220,10 @@ std::vector<std::string> readNumbersFromFile(const std::string &filename) {
     return numbers;
 }
 
-
-
+double parse_number(const std::string &expression) {
+    try {
+        return std::stod(expression);
+    } catch (...) {
+        return 0.0;
+    }
+}
