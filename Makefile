@@ -1,17 +1,14 @@
-# Name of executable and input file
+# Name of executable
 EXEC = calc
-INPUT = test.txt
 
-
-# Default target
+# Default target: just compile, don't run
 all: $(EXEC)
-	@./$(EXEC)
 
-
-# Compile target
+# Build the executable
 $(EXEC): main.o calculator.o
 	g++ -std=c++11 -o $(EXEC) main.o calculator.o
 
+# Compile object files
 main.o: main.cpp calculator.hpp
 	g++ -std=c++11 -c main.cpp
 
